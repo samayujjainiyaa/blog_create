@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <style>
+        .styled {
+            border: 0;
+            line-height: 2.5;
+            padding: 0 20px;
+
+            font-size: 1rem;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 1px #000;
+            border-radius: 10px;
+            background-color: rgba(220, 0, 0, 1);
+            background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+            box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        :root {
+            --orange: #fd9940;
+            --darkorange: #dd7d25;
+            --platinum: #e5e5e5;
+            --black: #2b2d42;
+            --white: #fff;
+            --thumb: #edf2f4;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font: 16px / 24px "Rubik", sans-serif;
+            color: var(--black);
+            background: var(--platinum);
+            margin: 50px 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 1em;
+        }
+
+        .cards {
+            display: grid;
+            grid-auto-columns: 100%;
+            grid-column-gap: 10px;
+            grid-auto-flow: column;
+            padding: 25px 0px;
+            list-style: none;
+            overflow-x: scroll;
+            -ms-scroll-snap-type: x mandatory;
+            scroll-snap-type: x mandatory;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+            scroll-snap-align: start;
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            color: var(--white);
+            background: var(--orange);
+        }
+
+        .card .card-title {
+            font-size: 20px;
+        }
+
+        .card .card-content {
+            margin: 20px 0;
+            max-width: 85%;
+        }
+
+        .card .card-link-wrapper {
+            margin-top: auto;
+        }
+
+        .card .card-link {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: var(--orange);
+            padding: 6px 12px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .card:hover .card-link {
+            background: var(--darkorange);
+        }
+
+        .cards::-webkit-scrollbar {
+            height: 12px;
+        }
+
+        .cards::-webkit-scrollbar-thumb,
+        .cards::-webkit-scrollbar-track {
+            border-radius: 92px;
+        }
+
+        .cards::-webkit-scrollbar-thumb {
+            background: var(--darkorange);
+        }
+
+        .cards::-webkit-scrollbar-track {
+            background: var(--thumb);
+        }
+
+        @media (min-width: 500px) {
+            .cards {
+                grid-auto-columns: calc(50% - 10px);
+                grid-column-gap: 20px;
+            }
+        }
+
+        @media (min-width: 700px) {
+            .cards {
+                grid-auto-columns: calc(calc(100% / 3) - 20px);
+                grid-column-gap: 30px;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .cards {
+                grid-auto-columns: calc(25% - 30px);
+                grid-column-gap: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark mt-3"
+            style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;border-radius:5px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="https://cdn-icons-png.flaticon.com/128/3082/3082011.png"
+                        height="50px" width="50px" style="float: left;">
+                    <h4 style="margin-top:15px; font-family: Cursive;">Samaykart</h4>
+                </a>
+
+
+                {% if request.user.is_authenticated %}
+                {% if Flag %}
+                <span style="color: white; margin-left: 0px;" class="glyphicon glyphicon-user"><img
+                        src="https://cdn-icons-png.flaticon.com/512/7997/7997854.png" height="30px" width="30px"><b>
+                         welcome to Auther: {{user.username}}</b></span>
+                {% else %}
+                <span style="color: white; margin-left: 0px;" class="glyphicon glyphicon-user"><img
+                    src="https://cdn-icons-png.flaticon.com/512/7997/7997854.png" height="30px" width="30px"><b>
+                     welcome to Normal: {{user.username}}</b></span>
+                        
+                {% endif %}   
+
+
+
+
+                <a href="logout"><button class="favorite styled" type="button">
+                        Logout
+                    </button></a>
+
+                {% else %}
+                <a style="margin-left: 0px;" href="/signup/"><button class="favorite styled" data-bs-toggle="modal"
+                        data-bs-target="#myModal" type="button">
+                        Signup
+                    </button></a>
+                <a href="ulogin"><button class="favorite styled" data-bs-toggle="modal" data-bs-target="#myModal"
+                        type="button">
+                        Login
+                    </button></a>
+                {% endif %}
+            </div>
+        </nav>
+        {% if request.user.is_authenticated %}
+        <div style="margin-top: 10px;">
+            <a href="personal"><button class="favorite styled" type="button">
+                    Personal Details
+                </button></a>
+            <a href="/blog/"><button class="favorite styled" type="button">
+                    Create Blog
+                </button></a>
+        </div>
+        <div class="container">
+            <ul class="cards">
+                {% for blg in blog %}
+                <li class="card">
+                    <div>
+                        <h3 class="card-title">{{blg.title}}</h3>
+                        <div class="card-content">
+                            <p>{{blg.blog}}</p>
+                        </div>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="" class="card-link">Learn More</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+
+            <ul class="cards">
+                <li class="card">
+                    <div>
+                        <h3 class="card-title">Do login</h3>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        {% endif %}
+    </div>
+</body>

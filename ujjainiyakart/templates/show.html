@@ -1,0 +1,27 @@
+<table align="center" border="1px">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Date of Birth</th>
+        <th>Email Address</th>
+        <th>Address</th>
+        <th>Message</th>
+    </tr>
+    {% for i in data %}
+    <form action="updatestu" method="post">
+        {% csrf_token %}
+    <tr>
+        <td>{{ froloop.counter }} <input type="text" name="id" value="{{i.id}}"/></td>
+        <td><input type="text" name="sname" value="{{i.fname}}"/></td>
+        <td><input type="text" name="branch" value="{{i.lname}}"/></td>
+        <td><input type="date" name="sub" value="{{i.date}}"/></td>
+        <td><input type="email" name="email" value="{{i.email}}"/></td>
+        <td><input type="text" name="fees" value="{{i.add}}"/></td>
+        <td><input type="text" name="fees" value="{{i.Message}}"/></td>
+        <td><input type="submit" value="Update"/></td>
+    </form>
+    <td><a href="deletestu?id={{i.id}}">DELETE</a></td>
+    </tr>
+    {% endfor %}
+</table>    
+
